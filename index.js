@@ -5,11 +5,19 @@ const bodyParser=require("body-parser");
 app.use(bodyParser.urlencoded({extended:true}));
 const PORT = process.env.PORT || 3030;
 
+// const connection=mysql.createConnection({
+//   host:"localhost",
+//   user:"root",
+//   password:"",
+//   database:"varshith"
+// });
+
 const connection=mysql.createConnection({
-  host:"localhost",
-  user:"root",
-  password:"",
-  database:"varshith"
+  host: "sql12.freesqldatabase.com",
+  user:"sql12622491",
+  password:"1GIR5u7sGu",
+  database:"sql12622491",
+  port:3306
 });
 
 connection.connect(function(err) {
