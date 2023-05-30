@@ -3,6 +3,7 @@ const express=require("express");
 const app=express();
 const bodyParser=require("body-parser");
 app.use(bodyParser.urlencoded({extended:true}));
+const PORT = process.env.PORT || 3030;
 
 const connection=mysql.createConnection({
   host:"localhost",
@@ -18,8 +19,12 @@ connection.connect(function(err) {
   console.log('Connected to the MySQL server.');
 });
 
-app.listen(3050,function(req,res){
-  console.log("listening on port 3050");
+// app.listen(3050,function(req,res){
+  // console.log("listening on port 3050");
+// });
+
+app.listen(PORT, () => {
+  console.log(`server started on port ${PORT}`);
 });
 
 
