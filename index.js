@@ -37,7 +37,7 @@ app.listen(PORT, () => {
 
 
 app.get("/",function(req,res){
-  res.sendFile(__dirname+"/index.html");
+  res.sendFile(__dirname+"/index1.html");
 });
 
 app.post("/",function(req,res){
