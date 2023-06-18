@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign-In Pop-up</title>
+  <style>
+    /* Styling for the pop-up modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 300px;
+      text-align: center;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- Link that triggers the sign-in pop-up -->
+  <a href="" id="signin-link">Click here to sign in</a>
+
+  <!-- The sign-in pop-up modal -->
+  <div id="signin-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Sign In</h2>
+      <form>
+        <input type="text" placeholder="Username" id="username">
+        <input type="password" placeholder="Password" id="password">
+        <button type="submit">Sign In</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Get the elements
+    const signinLink = document.getElementById('signin-link');
+    const signinModal = document.getElementById('signin-modal');
+    const closeBtn = document.querySelector('.close');
+    const usernameInput = document.getElementById('username');
+    const passwordInput = document.getElementById('password');
+
+    // Function to show the sign-in modal
+    function showSigninModal() {
+      signinModal.style.display = 'block';
+    }
+
+    // Function to hide the sign-in modal
+    function hideSigninModal() {
+      signinModal.style.display = 'none';
+    }
+
+    // Event listener for the sign-in link
+    signinLink.addEventListener('click', showSigninModal);
+
+    // Event listener for the close button
+    closeBtn.addEventListener('click', hideSigninModal);
+  </script>
+</body>
+</html>
